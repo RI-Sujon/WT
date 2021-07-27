@@ -1,0 +1,32 @@
+<br>
+
+<div class="row mt-1">
+    <div class="col-md-6 offset-md-3">
+        <form [formGroup]="service.formModel" autocomplete="off">
+            <label>BSSEROLL: {{student.bsseroll}}</label>
+            <div class="form-group required">
+                <label>Student Name</label>
+                <input class="form-control" formControlName="StudentName" name="studentName" [ngModel]="student.studentName">
+            </div>
+            <div class="form-group required">
+                <label>Session</label>
+                <input class="form-control" formControlName="Session" name="session" [ngModel]="student.session">
+            </div>
+            
+            <div class="form-group required">
+                <label>Email</label>
+                <input class="form-control" formControlName="Email"  name="email" [ngModel]="student.email">
+            </div>
+           
+            
+            <br>
+            <div class="form-row">
+                <div class="col-md-4 offset-md-5">
+                    <button mat-raised-button (click)="editStudentInfo()">SUBMIT</button>
+                    <br>
+                </div>
+                
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,125 @@
+<div class="content">
+    <div class="padding">
+        <div class="subtitle-style">
+            Attendance Report
+            <hr>
+        </div>
+    
+    </div>
+    <br><br>
+    <h3>Full Attendance Report*<hr></h3>
+    
+    <div class="padding-body">
+        <div class="row head-style">
+            <div class="col-sm-2 border">
+                BSSE ROLL
+            </div>
+            <div class="col-sm-4 border">
+                Student Name
+            </div>
+            
+            <div class="col-sm-2 border">
+                Attendance
+            </div>
+            <div class="col-sm-2 border">
+                Total Class
+            </div>
+            <div class="col-sm-2 border">
+                Percentage
+            </div>
+        </div>
+        <div *ngFor="let attMap of attendanceMapWithBSSEROLL_listAll" class="row row-style">
+            <div class="col-sm-2 row-content-border border">
+                {{attMap.bsseRoll}}
+            </div>
+            <div class="col-sm-4 row-content-border border">
+                {{attMap.studentName}}
+            </div>
+            <div class="col-sm-2 row-content-border border">
+                {{attMap.attendanceCount}}
+            </div>
+            <div class="col-sm-2 row-content-border border">
+                {{totalAttendancePostCounter}}
+            </div>
+            <div class="col-sm-2 row-content-border border">
+                {{attMap.percentage}}
+            </div>
+        </div>
+    </div>
+
+    <br><br>
+    <h3>This Month* <hr> </h3>
+    
+    <div class="padding-body">
+        <div class="row head-style">
+            <div class="col-sm-2 border">
+                BSSE ROLL
+            </div>
+            <div class="col-sm-4 border">
+                Student Name
+            </div>
+            
+            <div class="col-sm-2 border">
+                Attendance
+            </div>
+            <div class="col-sm-2 border">
+                Total Class
+            </div>
+            <div class="col-sm-2 border">
+                Percentage
+            </div>
+        </div>
+        <div *ngFor="let attMap of attendanceMapWithBSSEROLL_listMonthly" class="row row-style">
+            <div class="col-sm-2 row-content-border border">
+                {{attMap.bsseRoll}}
+            </div>
+            <div class="col-sm-4 row-content-border border">
+                {{attMap.studentName}}
+            </div>
+            <div class="col-sm-2 row-content-border border">
+                {{attMap.attendanceCount}}
+            </div>
+            <div class="col-sm-2 row-content-border border">
+                {{totalAttendancePostCounter}}
+            </div>
+            <div class="col-sm-2 row-content-border border">
+                {{attMap.percentage}}
+            </div>
+        </div>
+    </div>
+
+    <br><br>
+    <h3>Daily Attendance Report*<hr></h3>
+    <mat-form-field appearance="fill" class="col-sm-4">
+        <mat-label>Select Date</mat-label>
+        <mat-select (selectionChange)="dailyReport($event, '')" [(value)]="selectedDate">
+          <mat-option *ngFor="let opt of allDateAndTime" [value]="opt">{{opt | date:'medium'}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <div class="padding-body">
+        <div class="row head-style">
+            <div class="col-sm-2 border">
+                BSSE ROLL
+            </div>
+            <div class="col-sm-4 border">
+                Student Name
+            </div>
+            
+            <div class="col-sm-4 border">
+                Status
+            </div>
+        </div>
+        <div *ngFor="let attMap of attendanceMapWithBSSEROLL_listDaily" class="row row-style">
+            <div class="col-sm-2 row-content-border border">
+                {{attMap.bsseRoll}}
+            </div>
+            <div class="col-sm-4 row-content-border border">
+                {{attMap.studentName}}
+            </div>
+        
+            <div class="col-sm-4 row-content-border border">
+                {{attMap.status}}
+            </div>
+        </div>
+    </div>
+</div>

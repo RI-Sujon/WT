@@ -1,0 +1,18 @@
+<div class="row">
+    <div class="col-md-3 offset-md-1">
+        <div *ngIf="!isAdmin" style="padding: 20px;">
+            <h4><b>My Profile:</b> </h4>
+            Name: {{student.studentName}} <br>
+            Roll: {{student.bsseroll}} <br>
+            Session: {{student.session}} <br>
+            Email: {{student.email}} 
+        </div>
+        <div>
+            <button mat-raised-button routerLink='/login' routerLinkActive='active'>BACK</button>
+            <button mat-raised-button style="margin: 20px;"  (click)="sign_out()">Sign Out</button>
+        </div>
+    </div>
+    <div class="col-md-7">
+        <router-outlet></router-outlet>
+    </div>
+</div>

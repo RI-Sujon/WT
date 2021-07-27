@@ -1,0 +1,37 @@
+<div class="row tile-style-headline">
+    <div class="col-sm-3 offset-md-1">
+        <div> NAME </div>
+    </div>
+    <div class="col-sm-1">
+        <div> ROLL </div>
+    </div>
+    <div class="col-sm-1">
+        <div> SESSION </div>
+    </div>
+    <div class="col-sm-2">
+        <div> EMAIL </div>
+    </div>
+</div>
+<div *ngFor="let student of students">
+    <div class="row tile-style">
+        <div class="col-sm-3 offset-md-1">
+            <p> {{student.studentName}}</p>
+        </div>
+        <div class="col-sm-1">
+            <p> {{student.bsseroll}} </p>
+        </div>
+        
+        <div class="col-sm-1">
+            <p>{{student.session}}</p>
+        </div>
+        
+        <div class="col-sm-2">
+            <p>{{student.email}} </p>
+        </div>
+
+        <div class="col-sm-4">
+            <button (click)="editStudentInfo(student)">Edit</button>
+            <button (click)="deleteAccount(student)">Delete</button>
+        </div>
+    </div>
+</div> 

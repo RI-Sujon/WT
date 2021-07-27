@@ -1,0 +1,16 @@
+<div>    
+  <div>
+    <div>
+      <button routerLink='/admin/students-management/view-list' routerLinkActive='active' class="option-style">Home</button>
+      <button routerLink='/course/stream' routerLinkActive='active' class="option-style">Attendance</button>
+      <button routerLink='/course/attendance-report' routerLinkActive='active' class="option-style">Report</button>
+      <button (click)="sign_out()" class="option-style">Sign Out</button>
+    </div>
+    <hr>
+    <div> 
+      <router-outlet></router-outlet>
+    </div>
+    
+    
+  </div>
+</div>

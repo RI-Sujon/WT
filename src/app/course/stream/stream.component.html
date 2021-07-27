@@ -1,0 +1,39 @@
+<div>
+    <div>
+        <div align=center>
+            <br>
+            <div class="hello" *ngIf="isAdmin">
+                <h1><b>Attendance</b></h1>
+                <button mat-raised-button (click)="createAttendancePost()">Start</button>
+            </div>
+        </div>
+    
+        <div align=center *ngFor="let post of posts; let i = index">
+            <br><br><br>
+           
+            <mat-card>
+                <div class="post-style" *ngIf="post.postType === 'attendance'">
+                    <div class="post-head">
+                        <div class="post-giver-title">
+                            <h2>Attendance post no: {{i+1}}</h2>
+                            <br>
+                            <div class="post-date-time">{{post.dateAndTime | date:'medium'}}</div>
+                        </div>
+                    </div>
+                    
+                    <div *ngIf="isStudent">
+                        <div *ngIf="attendanceTrack[i]==='open'"><button mat-raised-button (click)="giveAttendance(post.dateAndTime)">Attendance</button></div>
+                        <div *ngIf="attendanceTrack[i]==='done'">Done</div>
+                        <div *ngIf="attendanceTrack[i]==='miss'">Missing</div>
+                    </div>
+                    <div *ngIf="isAdmin">
+                        <div *ngIf="post.post==='on'">
+                            <button mat-raised-button class="stop-attendance" (click)="stopAttendancePost(post.id)">Stop Attendance</button>
+                        </div>
+                    </div>
+                    <hr>
+                </div>
+            </mat-card>
+        </div>
+    </div>
+</div>
